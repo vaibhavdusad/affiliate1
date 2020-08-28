@@ -227,6 +227,6 @@ app.post("/comparisons",function(req,res){
   res.redirect("/comparisons/paymentGateway");
 })
 
-app.listen(port,function(){
+app.listen(process.env.PORT  || port,function(){
   console.log("Server is up and running. Happy Coding!");
 })
