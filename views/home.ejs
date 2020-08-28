@@ -1,0 +1,42 @@
+<%- include('header'); -%>
+<div class="top-home">
+  <h1 class="home-heading">
+    Compare All 3rd Part Tools And Platforms
+  </h1>
+  <p style="padding:0 0 4% 0; font-size: 18px; color:#251F44; font-weight:bold">
+    HOW IT WORKS
+  </p>
+  <div class="top-section-flow">
+    <div class="combine-flow">
+      <img src="/images/service.png" alt="" class="img-flow">
+      <p class="para-flow">Select Service Type For Analysis</p>
+    </div>
+    <img src="images/arrow.png" alt=""  style="margin-bottom:64px" class="img-arrow">
+    <div class="combine-flow">
+      <img src="/images/parameters.png" alt="" class="img-flow">
+      <p class="para-flow">Select Important Parameters</p>
+    </div>
+    <img src="images/arrow.png" alt="" style="margin-bottom:64px" class="img-arrow">
+    <div class="combine-flow">
+      <img src="/images/share-2x.png" alt="" class="img-flow">
+      <p class="para-flow">Share Analysis With Clients</p>
+    </div>
+    <form class="" action="/comparisons" method="post">
+      <button type="submit" name="button" class="button-top">START COMPARING</button>
+    </form>
+  </div>
+</div>
+<div class="bottom-home">
+  <h3 style="color:#251F44; margin-top:0; padding:16px 32px 32px 32px">SERVICES</h3>
+  <p class="bottom-para">We provide comparison matrix for 3 party integration available in wide variety of fields. Few of the top rated services are listed below</p>
+  <div class="grid-container">
+    <% for(var i=0;i<keys.length;i++){%>
+      <a href="/comparisons/<%- keys[i] %>">
+      <div class="grid-item"><p style="padding-left:80px"><img src="/images/wallet.png" alt="" style="margin-bottom:-5px; margin-right: 32px"><%-services[keys[i]].title%></p></div>
+      </a>
+    <%};%>
+  </div>
+
+</div>
+
+<%- include('footer'); -%>

@@ -1,0 +1,22 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+  $(".side").hover(function(){
+    $(".menu-bar").show(); $(".side").hide();
+  });
+  $(".close").click(function(){
+    $(".menu-bar").hide(); $(".side").show();
+  });
+  $(".menu-bar").mouseleave(function(){
+    $(".menu-bar").hide(); $(".side").show();
+  });
+  $(".share").click(function(){
+    var url = window.location.href;
+    $("#share-input").attr("value",url);
+    var copyText = document.getElementById("share-input");
+    copyText.select();
+    document.execCommand("copy");
+    alert("Copied");
+  });
+</script>
+</body>
+</html>

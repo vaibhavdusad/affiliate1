@@ -1,0 +1,38 @@
+<%- include('header1'); -%>
+<div class="right">
+  <div class="top-heading">
+    <h1>
+      <%- service.title %>
+    </h1>
+  </div>
+  <div class="share">
+      <p>
+        <input id="share-input" style="display:none">
+        <img src="/images/share.png" alt="" style="margin-bottom:-5px">
+        GET SHAREABLE LINK
+      </p>
+  </div>
+  <div class="comparison">
+    <table class="table">
+      <tr>
+        <th></th>
+        <% for(var i=0;i<service.companies.length;i++){ %>
+          <th class="company-name"><%- service.companies[i].company %></th>
+        <% } %>
+      </tr>
+      <% for(var j=0;j<service.parameters.length;j++){ %>
+        <% var m = "parameter" + (j+1); %>
+        <tr>
+          <th class="parameter-name white"><%-service.parameters[j]%><hr style="width:146px; border: 1px solid #D3DBFF;
+            margin-bottom: 0px"/></th>
+          <% for(var k=0;k<service.companies.length;k++){ %>
+              <td class="white"><%-service.companies[k][m]%><hr style="width:146px; border: 1px solid #D3DBFF;
+    margin-bottom: 0px"/></td>
+          <% } %>
+        </tr>
+      <% } %>
+    </table>
+  </div>
+</div>
+
+<%- include('footer'); -%>
